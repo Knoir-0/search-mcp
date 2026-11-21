@@ -31,7 +31,9 @@ venv/
 ENV/
 env/
 
-# IDE & OS
+# IDE, Mise Local Overrides & OS
 .vscode/
 .idea/
 .DS_Store
+mise.local.toml
+.mise.local.toml

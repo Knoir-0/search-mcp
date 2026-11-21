@@ -1,0 +1,25 @@
+[tools]
+python = "latest"
+ripgrep = "latest"
+
+[env]
+_.file = { path = ".env", redact = true }
+_.python.venv = { path = ".venv", create = true }
+PYTHONUNBUFFERED = "1"
+
+[tasks.install]
+description = "Install Python dependencies into the project virtual environment"
+run = "pip install -r requirements.txt"
+
+[tasks.run]
+description = "Run the Search MCP server over stdio locally"
+depends = ["install"]
+run = "python server.py"
+
+[tasks."docker:build"]
+description = "Build the containerized Search MCP image (with ripgrep)"
+run = "docker build -t search-mcp ."
+
+[tasks."docker:run"]
+description = "Run the containerized Search MCP server over stdio"
+run = "docker run -i --rm --env-file .env search-mcp"

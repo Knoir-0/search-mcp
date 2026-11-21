@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "search-mcp"
-version = "0.1.0"
-description = "MCP server for searching Google, Stack Overflow, GitHub, and Reddit"
+version = "0.2.0"
+description = "Containerized MCP server for searching Google, Stack Overflow, GitHub, and Reddit with ripgrep-powered snippet extraction"
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.10"
